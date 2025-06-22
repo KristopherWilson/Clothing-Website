@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Shopping">
+    <title>Merch Shop - Shop</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+    <script src = "script.js"></script>
+    <script src="cart.js"></script>
+</head>
+
+<body onload="loadCart(); checkDate();">
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Landon and Kris' Merch Shop</a>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav w-100">
+                      <li class="nav-item">
+                        <a class="nav-link"  href="index.html">Home</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Shop</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                      </li>
+                      <li class="nav-item ms-auto">
+                        <a class="nav-link" href="checkout.html"><span id="cart-badge" class="badge bg-danger"></span><img class="pull-right" src="image_audio/shopping-cart.png" id="shopping-cart-png" alt="Shopping Cart" ></a>
+                        
+                      </li>
+                    </ul>
+                  </div>
+            </div>
+        </nav>
+        <br>
+          <!-- Carousel -->
+        <div id="shopCarousel" class="carousel slide" style="width: 512px; height:200px; margin: auto" data-bs-ride="carousel">
+
+          <!-- Indicators/dots -->
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#shopCarousel" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#shopCarousel" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#shopCarousel" data-bs-slide-to="2"></button>
+            <button id="carouselButton" type="button" data-bs-target="#shopCarousel" data-bs-slide-to="3"></button>
+          </div>
+
+          <!-- The slideshow/carousel -->
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="image_audio/t-shirt.jpg" alt="shirt" class="d-block" style="width: 512px">
+            </div>
+            <div class="carousel-item">
+              <img src="image_audio/flask1.jpg" alt="flask" class="d-block" style="width:512px">
+            </div>
+            <div class="carousel-item">
+              <img src="image_audio/hoodie.jpg" alt="hoodie" class="d-block" style="width:512px">
+            </div>
+            <div id="carouselHoliday" class="carousel-item">
+              <img id="event" src="" alt="" class="d-block" style="width:512px">
+            </div>
+          </div>
+
+          <!-- Left and right controls/icons -->
+          <button class="carousel-control-prev" type="button" data-bs-target="#shopCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#shopCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </button>
+        </div>
+
+        <div id="tableShop" class="container p-3 my-5 border bg-dark text-white text-center rounded">
+          <table class="table" style="border: 2px solid black; margin: auto;  color: white;">
+            <thead>
+            <tr>
+                <th>Item</th>
+                <th>Price</th>
+                <th>Rating</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>T-Shirt</td>
+                <td>$28.00</td>
+                <td>5 Stars</td>
+            </tr>
+            <tr>
+                <td>Jacket</td>
+                <td><s>$62.00</s>$45.00</td>
+                <td>4.5 Stars</td>
+            </tr>
+            <tr>
+                <td>Water Bottle</td>
+                <td><s>$34.00</s>$33.00</td>
+                <td>3.9 Stars</td>
+            </tr>
+            <tr id="tableHolidayRow">
+              <td id="tableHolidayName">Holiday item</td>
+              <td id="tableHolidayPrice">$50.00</td>
+              <td>5 Stars</td>
+            </tr>
+            </tbody>
+          </table>
+          <br>
+          <label for="items">Choose an item to add to cart:</label>
+          <select id="items">
+              <option value="t-shirt">T-Shirt</option>
+              <option value="jacket">Jacket</option>
+              <option value="waterBottle">Water Bottle</option>
+              <option id="holidayItem" value="holidayItem">Holiday item</option>
+          </select>
+          
+          <button type="button" onclick="playSound(); addToCart(items.value);">Add to Cart</button>
+          <br>
+          <p id = "cartAlert"></p>
+          <audio id="button-click-sound">
+          <source src="image_audio/button_click.mp3" type="audio/mpeg">
+          </audio>
+        </div>
+</body>
+
+</html>

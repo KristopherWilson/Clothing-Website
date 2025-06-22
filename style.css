@@ -1,0 +1,21 @@
+* {
+    scroll-behavior: smooth;
+}
+
+.carousel-control-prev,
+.carousel-control-next{
+  bottom: -150%;
+  width: 7.5%;
+}
+
+.carousel-indicators{
+  bottom: -160%;
+}
+
+#tableShop{
+  position: relative; top: 17em; left: 1em;
+}
+
+.checked {
+  color: orange;
+}
